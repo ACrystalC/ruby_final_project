@@ -21,10 +21,7 @@ class Genre
   def self.all
     @genres
   end 
-
-  # def genre_artists
-  #   Artist.has_genre
-  # end  
+ 
 end  
 
 
