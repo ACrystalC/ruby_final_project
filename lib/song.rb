@@ -3,16 +3,27 @@ require_relative "genre.rb"
 
 
 class Song
-  attr_accessor :name, :artist, :genre
+  attr_accessor :name, :artists 
 
-  @@songs = []
+  @songs = []
 
   def initialize
-    @@songs << self
+    self.class.all << self
+    @artists = []
+    # @genres = []
   end
   
-  def name
-    @name
-  end      
+  def self.all
+    @songs
+  end  
 
-end 
+  def genre
+    @genre
+  end
+
+  def genre=(genre_instance)
+    @genre = genre_instance
+    genre_instance.songs << self
+  end
+
+end

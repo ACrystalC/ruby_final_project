@@ -4,47 +4,38 @@ require_relative "song.rb"
 class Artist
   attr_accessor :name, :songs, :genres
 
-  @@artists = []
-  @songs = []
+  @artists = []
 
   def initialize
-    @@artists << self
-  end
-  
-  def name
-    @name
-  end  
-
-  def songs
-     @songs  
+    self.class.all << self
+    @songs = []
+    @genres = []
   end
   
   def self.reset_artists
-    @@artists.clear
+    @artists.clear
   end  
 
   def self.count
-    @@artists.size
+    @artists.size
   end 
   
   def self.all
-    @@artists
+    @artists
   end
 
   def songs_count
-    @songs.size
+    self.songs.size
   end
-
+    
   def add_song(song)
-    @songs =[]
     @songs << song
-    # @genres = []
-    # @genres << genre   
+    @genres << song.genre
   end  
 
+  def genre(genre)
+    add_song(song)
+    # @genres << song.genre
+  #   song.genre.artists << self unless song.genre.artists.include?(self)
+  end
 end 
-
-
-
-
-
