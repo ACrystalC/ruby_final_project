@@ -31,11 +31,10 @@ class Artist
   def add_song(song)
     @songs << song
     @genres << song.genre
+    if song.genre != nil
+      song.genre.artists << self unless 
+      song.genre.artists.include?(self)
+    end  
   end  
 
-  def self.has_genre(genre)
-    artist_genre = []
-    # @genres << song.genre
-  #   song.genre.artists << self unless song.genre.artists.include?(self)
-  end
 end 

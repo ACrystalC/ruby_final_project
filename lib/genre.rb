@@ -22,9 +22,9 @@ class Genre
     @genres
   end 
 
-  def genre_artists
-    Artist.has_genre
-  end  
+  # def genre_artists
+  #   Artist.has_genre
+  # end  
 end  
 
 
