@@ -33,8 +33,8 @@ class Artist
     @genres << song.genre
   end  
 
-  def genre(genre)
-    add_song(song)
+  def self.has_genre(genre)
+    artist_genre = []
     # @genres << song.genre
   #   song.genre.artists << self unless song.genre.artists.include?(self)
   end

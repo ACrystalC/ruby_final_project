@@ -11,7 +11,7 @@ class Genre
   def initialize
     self.class.all << self
     @songs = []
-    # @artists = []
+    @artists = []
   end 
 
   def self.reset_genres
@@ -22,7 +22,9 @@ class Genre
     @genres
   end 
 
-
+  def genre_artists
+    Artist.has_genre
+  end  
 end  
 
 
