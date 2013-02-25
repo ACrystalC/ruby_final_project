@@ -21,10 +21,12 @@ class Genre
   def self.all
     @genres
   end 
+
+  def artists
+    Artist.all.select {|artist| artist.genres.include?(self)}
+  end  
  
 end  
 
 
-# def initalize(attributes = {})
-#   attributes[:genre] ||= ""
 

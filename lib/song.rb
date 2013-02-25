@@ -3,6 +3,17 @@ require_relative "genre.rb"
 
 
 class Song
+  attr_accessor :name, :artists
+
+  @songs = []
+
+  def initialize 
+    self.class.all << self
+  end  
+
+  def self.all
+    @songs
+  end
 
   def genre
     @genre

@@ -175,9 +175,24 @@ end
 # without your song class having this functionality, so go ahead and try
 # to use assert and assert_equal to write some tests.
 
-test 'Can initialize a song'
-test 'A song can have a name'
-test 'A song can have a genre'
+test 'Can initialize a song' do
+  assert Song.new
+end
+
+test 'A song can have a name' do
+  song = Song.new
+  song.name = "Hits of Sunshine"
+
+  assert_equal song.name, "Hits of Sunshine"
+end
+
+test 'A song can have a genre' do
+  song = Song.new
+  song.genre = "rock"
+
+  assert_equal song.genre = "rock"
+end
+
 test 'A song has an artist'
 
 # Part 2: Site Generation Using ERB
